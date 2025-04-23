@@ -21,13 +21,13 @@ document.querySelectorAll('.gallery-item').forEach(item => {
 // Close overlay if tapping directly on overlay
 document.querySelectorAll('.overlay').forEach(overlay => {
     overlay.addEventListener('click', (event) => {
-        event.stopPropagation();
+        event.stopPropagation(); // Prevent the event from bubbling up
         const galleryItem = overlay.closest('.gallery-item');
         galleryItem.classList.remove('active');
     });
 });
 
-// Close overlay if tapping anywhere outside
+// Close overlay if tapping anywhere outside of a gallery item
 document.addEventListener('click', (event) => {
     if (!event.target.closest('.gallery-item')) {
         document.querySelectorAll('.gallery-item').forEach(item => {
@@ -35,3 +35,4 @@ document.addEventListener('click', (event) => {
         });
     }
 });
+

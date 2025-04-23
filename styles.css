@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #fff;
-                overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    overflow-x: hidden;
 }
 
 header {
@@ -45,18 +45,17 @@ h1 {
     }
 }
 
-    @media (max-width: 768px) {
-        .gallery {
-            grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
-        }
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
     }
+}
 
-    @media (max-width: 480px) {
-        .gallery {
-            grid-template-columns: 1fr; /* 1 column for mobile */
-        }
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 column for mobile */
     }
-
+}
 
 .gallery img {
     width: 100%;
@@ -66,7 +65,6 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: block;
-
 }
 
 .gallery img:hover {
@@ -83,7 +81,7 @@ h1 {
 
 .gallery-item img {
     width: 100%;
-    height: 600px;
+    height: 470px; /* Consistent height across all images */
     object-fit: cover;
     display: block;
 }
@@ -104,9 +102,11 @@ h1 {
     font-size: 1.2rem;
     text-align: center;
     padding: 0;
+    cursor: pointer; /* Make overlay clickable */
 }
 
-.gallery-item:hover .overlay {
+.gallery-item:hover .overlay,
+.gallery-item.active .overlay {
     opacity: 1;
 }
 
