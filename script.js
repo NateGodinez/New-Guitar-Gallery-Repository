@@ -15,3 +15,14 @@ document.querySelectorAll('.gallery-item').forEach(item => {
             item.classList.remove('active');
         });
     });
+
+    //close overlay if tapping directly on overlay
+    document.querySelectorAll('.overlay').forEach(overlay => {
+        overlay.addEventListener('click', (event) => {
+            //prevent event bubbling to document
+            event.stopPropagation();
+
+            const galleryItem = overlay.closest('.gallery-item');
+            galleryItem.classList.remove('active');
+        });
+    });
