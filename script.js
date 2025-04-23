@@ -1,7 +1,7 @@
 document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', (event) => {
         // Prevent reactivating the overlay if the overlay was clicked
-        if (event.target.classList.contains('overlay')) {
+        if (event.target.closest('.overlay')) {
             // Let the overlay click handler handle this
             return;
         }
